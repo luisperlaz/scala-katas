@@ -44,6 +44,6 @@ class StringCalculatorTest extends FunSuite {
 		val excep = intercept[IllegalArgumentException] {
 			StringCalculator.add("1,-3,5,-6")
 		}
-		assert(excep.getMessage == "negative numbers aren't allowed: -3, -6")
+		assert(excep.getMessage == "requirement failed: negative numbers aren't allowed: -3, -6")
 	}
 }

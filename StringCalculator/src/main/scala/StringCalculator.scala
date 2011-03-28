@@ -22,8 +22,7 @@ object StringCalculator {
 		case NumReg(n) => n.toInt
 		case InputPattern(List(nums @ _*)) => {
 			val neg = nums.filter(_ < 0)
-			if (neg.size > 0) 
-				throw new IllegalArgumentException("negative numbers aren't allowed: %s".format(neg.mkString(", ")))
+			require(neg.size == 0, "negative numbers aren't allowed: %s".format(neg.mkString(", ")))
 			nums.reduceRight(_ + _) 
 		}
 	}
